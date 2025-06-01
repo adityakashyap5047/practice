@@ -2,6 +2,13 @@ import java.util.*;
 
 public class FeelTired{
 
+    public static int caculateExercises(int energy, int[] drainedEnergy){
+
+        
+
+        return -1;
+    }
+
     public static void main(String[] args) {
         
         Scanner sc = new Scanner(System.in);
@@ -20,5 +27,7 @@ public class FeelTired{
         }
 
         sc.close();
+
+        int result = caculateExercises(energy, drainedEnergy);
     }
 }

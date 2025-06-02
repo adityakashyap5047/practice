@@ -4,20 +4,26 @@ public class FeelTired{
 
     public static int caculateExercises(int energy, int[] drainedEnergy){
 
-        int exercises = 0;
+        ArrayList <Integer> energyList = new ArrayList<>();
 
         for (int i = 0; i < drainedEnergy.length; i++) {
-            if(energy - 2 * drainedEnergy[i] >= 0) {
-                energy -= 2 * drainedEnergy[i];
-                exercises += 2;
-            } else if (energy - drainedEnergy[i] >= 0) {
-                energy -= drainedEnergy[i];
-                exercises++;
-            } 
+            energyList.add(drainedEnergy[i]);
+            energyList.add(drainedEnergy[i]);
         }
-        if (energy <= 0) {
-            return exercises;
+
+        Collections.sort(energyList, Collections.reverseOrder());
+
+        int exercises = 0;
+        int totalEnergy = 0;
+
+        for (int i = 0; i < energyList.size(); i++) {
+            totalEnergy += energyList.get(i);
+            exercises++;
+            if (totalEnergy >= energy) {
+                return exercises;
+            }
         }
+
         return -1;
     }
 
@@ -42,6 +48,6 @@ public class FeelTired{
 
         int result = caculateExercises(energy, drainedEnergy);
 
-        System.out.println(result);
+        System.out.println("You feel tired after " + result + " exercises.");
     }
 }

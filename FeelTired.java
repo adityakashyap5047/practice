@@ -2,9 +2,7 @@ import java.util.*;
 
 public class FeelTired{
 
-    public static int caculateExercises(int energy, Integer[] drainedEnergy){
-
-        Arrays.sort(drainedEnergy, Collections.reverseOrder());
+    public static int caculateExercises(int energy, int[] drainedEnergy){
 
         int exercises = 0;
 
@@ -33,7 +31,7 @@ public class FeelTired{
         System.out.print("Enter the total number of Exercises: ");
         int exercise = sc.nextInt();
 
-        Integer drainedEnergy[] = new Integer[exercise];
+        int drainedEnergy[] = new int[exercise];
 
         for(int i = 0; i < exercise; i++) {
             System.out.print("Enter the energy drained by exercise " + (i + 1) + ": ");
